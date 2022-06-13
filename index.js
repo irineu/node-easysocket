@@ -8,7 +8,7 @@ var easysocket = {
     },
     send: function(socket, data, callback) {
 
-        if(!socket.chunk) easysocket._prepareSocket(socket);
+        if(!socket.chunck) easysocket._prepareSocket(socket);
 
         var buffer = new Buffer(data, "binary");
         var consolidatedBuffer = new Buffer(4 + buffer.length);
