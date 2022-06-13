@@ -46,7 +46,7 @@ socket.on('data', function(data) {
 });
 ```
 
-#####NOTE: 
+##### NOTE: 
 
 1. If a chunk contains 5 messages, the method **handleMessage** will be called 5 times with the respective message.
 2. If a chunk contains 2 messages and a half, it will be called 2 times, and when the end of the message comes on next chunk, the method will be called.
@@ -54,3 +54,6 @@ socket.on('data', function(data) {
  
 ##### Limitations:
 The embedded protocol use a header with 4 bytes to indicate the size of your message, so you can only send a message with: **2147483647 bytes (~2.1GB)**. If you need more than it, just fork this project on github and expand to fit your needs.
+
+#### Improvements:
+This is a nice snippet for simple communications purposes. If you need a more robust communcation solution, please check: https://github.com/irineu/eight-protocol
