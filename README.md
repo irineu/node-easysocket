@@ -1,6 +1,9 @@
 # node-easysocket [![Build Status](https://travis-ci.org/irineu/node-easysocket.svg?branch=master)](https://travis-ci.org/irineu/node-easysocket)
 No more headcache! This is a (very) simple snippet to save your time with socket communication!
 
+### Best fit for you project:
+This is a nice snippet for simple communications purposes. If you need a more robust communcation solution, please check: [https://github.com/irineu/hachi-nio-js](https://github.com/irineu/hachi-nio-js)
+
 #### Why node-easysocket?
 It is simple! When you test a simple socket communication, in the more of times everything works fine, but when your project grouw up, after publish and test remote and bad connections, you will get some problems with truncated messages or messages with extra data (part of the next message). It is normal.
 You will need create a protocol to handle that situation, maybe implement a header or a terminator (bad ideia), maybe you are already frustated with that notice.
@@ -54,6 +57,3 @@ socket.on('data', function(data) {
  
 ##### Limitations:
 The embedded protocol use a header with 4 bytes to indicate the size of your message, so you can only send a message with: **2147483647 bytes (~2.1GB)**. If you need more than it, just fork this project on github and expand to fit your needs.
-
-#### Improvements:
-This is a nice snippet for simple communications purposes. If you need a more robust communcation solution, please check: https://github.com/irineu/eight-protocol
