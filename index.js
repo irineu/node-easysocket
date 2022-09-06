@@ -2,16 +2,16 @@ var easysocket = {
     _prepareSocket: function(socket){
         socket.chunck = {
             messageSize : 0,
-            buffer: new Buffer(0),
-            bufferStack: new Buffer(0)
+            buffer: new Buffer.alloc(0),
+            bufferStack: new Buffer.alloc(0)
         };
     },
     send: function(socket, data, callback) {
 
         if(!socket.chunck) easysocket._prepareSocket(socket);
 
-        var buffer = new Buffer(data, "binary");
-        var consolidatedBuffer = new Buffer(4 + buffer.length);
+        var buffer = new Buffer.from(data, "binary");
+        var consolidatedBuffer = new Buffer.alloc(4 + buffer.length);
 
         consolidatedBuffer.writeInt32LE(buffer.length, 0);
         buffer.copy(consolidatedBuffer, 4);
