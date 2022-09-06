@@ -24,7 +24,7 @@ var easysocket = {
     },
     recieve: function(socket, data,callback) {
 
-        if(!socket.chunk) easysocket._prepareSocket(socket);
+        if(!socket.chunck) easysocket._prepareSocket(socket);
 
         socket.chunck.bufferStack = Buffer.concat([socket.chunck.bufferStack, data]);
 
